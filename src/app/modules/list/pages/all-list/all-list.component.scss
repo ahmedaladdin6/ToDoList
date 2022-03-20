@@ -1,0 +1,93 @@
+@import '../../../../../mixin.scss';
+
+.card {
+    position: relative;
+    @include width_height(300px, auto);
+    @include margin_padding(auto, 10px 40px 40px 40px);
+     max-height: 500px;
+    box-sizing: border-box;
+    background-color: var(--color-white);
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+    overflow-y: auto;
+    .header {
+        @include position_element(sticky, 0, 0, '', 0);
+        background-color: var(--color-white);
+
+        div.date {
+            padding: 20px 0;
+            @include display_flex(flex, space-between);
+            color: var(--color-important-text);
+            div#day {
+                @include font_element(35px, bolder);
+            }
+            div#month-year {
+                margin: 10px;
+                font-size: 15px;
+                line-height: 15px;
+                span {
+                    display: block;
+                }
+                span#month {
+                    font-weight: bolder;
+                }
+            }
+            div#week {
+                font-weight: bolder;
+                margin-top: 10px;
+            }
+        }
+
+        div.search {
+            padding: 0 10px;
+            input {
+                width: 100%;
+                padding: 5px;
+                box-sizing: border-box;
+                @include border_element(1px solid var(--color-hint),5px);
+            }
+        }
+    }
+
+    .body {
+        margin-top: 50px;
+         div.empty{
+             text-align: center;
+         }
+        div.list {
+            @include display_flex(flex, space-between);
+            font-size: 15px;
+            margin-top: 20px;
+
+            span.unChecked {
+                @include width_height(15px, 15px);
+                @include border_element(2px solid var(--color-main-button),50%);
+                background-color: var(--color-white);
+                margin: 0 5px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+div.button-content {
+    text-align: center;
+    position: relative;
+    width: 300px;
+    margin: auto;
+    margin-top: -25px;
+    z-index: 10;
+
+    button.btn-add {
+        background-color: var(--color-main-button);
+        @include font_element(30px, bolder, var(--color-main-header-dark));
+        @include border_element(unset,50%);
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+}
+
+// color of name list when checked
+.item-checked {
+    color:var(--color-item-checked)
+}

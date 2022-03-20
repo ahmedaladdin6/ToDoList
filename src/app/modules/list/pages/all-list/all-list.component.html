@@ -1,0 +1,51 @@
+<div class="td-page-content">
+    <div class="card">
+       <div class="header">
+        <div class="date">
+            <div class="td-flex-between">
+                <div id="day">
+                   {{currentDate|date:'dd'}}
+                </div>
+               <div id="month-year">
+                   <span id="month">
+                       {{currentDate|date:'MMM'}}
+                    </span>
+                    <span id="year">
+                       {{currentDate|date:'yyyy'}}
+                    </span>
+               </div>
+               </div>
+            <div id="week">
+               {{currentDate|date:'EEEE'}}
+            </div>
+           
+   
+           </div>
+           <div class="search">
+               <input type="text" placeholder="Search by name" (keyup)="searchInListByName($event.target.value)">
+           </div>
+       </div>
+        <div class="body">
+            <ng-container *ngIf="list.length>0 ;else noData">
+                <div class="list" *ngFor="let item of filteredList">
+                    <span [class.item-checked]="item.checked" (click)="addEditList(item.id)">
+                            {{item.name|titlecase}}
+                    </span>
+                    <span *ngIf="!item.checked" class="unChecked" (click)="checkedList(item)"></span>
+                    <img *ngIf="item.checked" src="assets/images/chk.png" width="27px" height="auto" alt="smile">
+                </div>
+            </ng-container>
+            <ng-template #noData>
+                <div class="empty">
+                    No list found ...
+                </div>
+            </ng-template>
+         
+        </div>
+    </div>
+    <div class="button-content">
+        <button class="btn-add" (click)="addEditList()">+</button>
+
+    </div>
+
+</div>

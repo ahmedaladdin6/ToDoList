@@ -1,0 +1,71 @@
+:root{
+    //color
+    --shadow:0px 1px 10px 1px rgba(135, 135, 138, 0.27);
+    --color-bkg:#F0EFEA;
+    --color-main-header:#00B0AC;
+    --color-main-header-dark:#004E75;
+    --color-main-button:#51E3A5;
+    --color-light-white:#FAF8F9;
+    --color-white:#fff;
+    --color-warning:rgb(190, 42, 42);
+    --color-gray:rgb(114, 113, 113);
+    --color-hint:rgb(116, 98, 98);
+    --color-item-checked:rgb(192, 189, 189);
+    --color-important-text:#524F5E;
+    //size
+    --font-size:1vw;
+ }
+
+
+body{
+    margin: 0;
+background-color: var(--color-bkg);
+font-family:'system-ui',Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+// font-size: calc(0.75em + 1vmin);
+
+}
+
+//td ===> toDolist style 
+.td-page-content{
+   margin-top: 160px;
+}
+.td-flex-between{
+    display: flex;
+    justify-content:space-between
+}
+
+
+//direction right to left  UI style
+html[dir="rtl"]{
+    .page-container:after,
+    .system-name:after,.system-name{
+        left: unset!important;
+        right: -30px!important;
+        transform: skew(20deg)!important;
+    }
+    .departement,.departement:after{
+        left: -30px!important;
+        right: unset!important;
+        transform: skew(20deg)!important;
+    }
+    img.twitter{
+        margin-left:30px!important;
+    }
+    img.qr{
+        left:unset!important;
+        right: 30px!important;
+    }
+}
+
+@media  screen and ( min-width: 528px) and  (max-width:900px ) {
+  :root{
+    --font-size:1.8vw;
+  }
+
+}
+
+@media  screen and ( max-width: 528px){
+    :root{
+        --font-size:2.3vw;
+      }
+    }

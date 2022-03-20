@@ -1,0 +1,21 @@
+<div class="td-page-content">
+
+        <form [formGroup]="listForm" class="form"  (ngSubmit)="onSubmit()">
+            <div class="header">
+                <span class="title"> {{buttonName}} List</span>
+                <button type="button" class="delete-btn" (click)="deleteList()">Delete</button>
+            </div>
+
+            <input type="text" formControlName="name" minlength="5" maxlength="30" placeholder="Name of the task" >
+            <div class="checked">
+                <span>Done 
+                    (<span class="hint"> checked mean  you are done this task </span>) </span>
+                <input type="checkbox" formControlName="checked">
+            </div>
+    
+            <button type="submit" class="add-btn" [class.disabled-btn]="listForm.invalid" [disabled]="listForm.invalid">{{buttonName}}</button>
+ 
+    </form>
+   
+</div>
+

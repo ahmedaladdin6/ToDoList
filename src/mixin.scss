@@ -1,0 +1,43 @@
+@mixin position_element($position, $top:unset, $right:unset, $bottom:unset, $left:unset, $index:unset) {
+    position: $position;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+    z-index: $index;
+  }
+  
+  @mixin transform ($wk_origin, $ms_origin, $transform_origin, $wk, $ms, $transform) {
+    -webkit-transform-origin: $wk_origin;
+    -ms-transform-origin: $ms_origin;
+    transform-origin: $transform_origin;
+    -webkit-transform: $wk;
+    -ms-transform: $ms;
+    transform: $transform;
+  }
+  
+  @mixin display_flex($display, $content) {
+    display: $display;
+    justify-content: $content;
+  }
+  
+  @mixin width_height($w, $h) {
+    height: $h;
+    width: $w
+  }
+  
+  @mixin font_element($size, $weight, $color:'') {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color
+  }
+  
+  @mixin margin_padding($margin, $padding) {
+    margin: $margin;
+    padding: $padding
+  }
+  
+  @mixin border_element($border,$raduis){
+    border:$border;
+    border-radius: $raduis;
+  }

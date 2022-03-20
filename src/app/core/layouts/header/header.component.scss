@@ -1,0 +1,89 @@
+@import '../../../../mixin.scss';
+
+$main-font-size :var(--font-size);
+$white:var(--color-white);
+$main-dark: var(--color-main-header-dark);
+$light-white:var(--color-light-white);
+$main-color:var(--color-main-header);
+@function fontSize($size){
+  $result: 1vw;
+   $result : calc(#{$main-font-size} * #{$size});
+   @return $result;
+};
+
+.page-container {
+  @include position_element(fixed,0, 0, unset, 0,9999999);
+  overflow: hidden;
+  height: 135px;
+  .system-name {
+    @include position_element(absolute,unset, unset, unset, -50px,5);
+    @include width_height(60%, 70px);
+    @include display_flex(flex, flex-end);
+    padding: 20px;
+    overflow: hidden;
+    align-items: center;
+  
+    span.name {
+      @include font_element(fontSize(1.5), bolder,$white );
+      @include margin_padding(15px 0 0 0, 47px);
+      z-index: 100;
+  
+      span.sub {
+        font-size:fontSize(1);
+        display: block;
+      }
+    }
+  }
+  
+  .system-name:after {
+    content: '';
+    @include position_element(absolute, 20px, unset, unset, 0, 5);
+    @include width_height(100%, 100%);
+    @include transform(100% 0, 100% 0, 100% 0, skew(-20deg), skew(-20deg), skew(-20deg));
+    background:$main-dark;
+  }
+  
+  .departement {
+    @include position_element(absolute, unset, 0, unset, 5);
+    @include width_height(38%, 70px);
+     @include display_flex(flex, flex-end);
+    padding: 20px;
+    overflow: hidden;
+    align-items: center;
+    span {
+      @include font_element(fontSize(1.5), bolder,$main-dark);
+      @include margin_padding(5px, 20px 0 0 0);
+      z-index: 100;
+    }
+    img.twitter {
+      z-index: 10;
+      @include margin_padding(5px, 20px 0 0 0);
+    }
+  }
+  
+  .departement:after {
+    content: '';
+    @include position_element(absolute, 20px, -30px, unset, unset, 5);
+    @include width_height(100%, 100%);
+    @include transform(100% 0, 100% 0, 100% 0, skew(-20deg), skew(-20deg), skew(-20deg));
+    background: $light-white;
+  }
+}
+
+.page-container:after {
+  content: '';
+  @include position_element(absolute, 0px, unset, unset, 0, 1);
+  @include width_height(50%, 100%);
+  @include transform(100% 0, 100% 0, 100% 0, skew(-20deg), skew(-20deg), skew(-20deg));
+  background: $main-color;
+}
+
+img.qr {
+  @include position_element(fixed, 70px, unset, unset, 20px, 99999999);
+}
+
+@media screen and (max-width : 528px ) {
+    img.qr{
+     display: none;
+    }
+}
