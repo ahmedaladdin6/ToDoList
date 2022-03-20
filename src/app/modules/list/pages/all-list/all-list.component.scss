@@ -58,7 +58,7 @@
             @include display_flex(flex, space-between);
             font-size: 15px;
             margin-top: 20px;
-
+            cursor: pointer;
             span.unChecked {
                 @include width_height(15px, 15px);
                 @include border_element(2px solid var(--color-main-button),50%);
